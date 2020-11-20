@@ -70,7 +70,7 @@ const show = ()=>{
     fetch('https://api.github.com/graphql' , {
         method : 'POST',
         headers : {
-            "Authorization" : "bearer a7fbe166dc4540b1eff28c15294829c50259f51b"
+            "Authorization" : "bearer c6c84b4b050bb39c172261daa7696cb68cd43e30"
         },
         body : JSON.stringify({query : `{
             user(login: "\Quadrizzz"\ ) {
@@ -79,7 +79,8 @@ const show = ()=>{
                      { name  
                         url
                         description 
-                        updatedAt forkCount 
+                        updatedAt 
+                        forkCount 
                         stargazers{ 
                             totalCount
                         } 
