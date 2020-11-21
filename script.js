@@ -66,12 +66,19 @@ window.onresize = ()=>{
 
 
 const show = ()=>{
-    const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY
-    const name ="Qudrizzz"
+    fetch('https://blooming-sea-31036.herokuapp.com/')
+    .then(response => response.json())
+    .then(key =>{
+        shows(key)
+    } )
+    
+}
+
+const shows = (key)=>{
     fetch('https://api.github.com/graphql' , {
         method : 'POST',
         headers : {
-            "Authorization" : `bearer ${GRAPHQL_API_KEY}` 
+            "Authorization" : `bearer ${key}` 
         },
         body : JSON.stringify({query : `{
             user(login: "\Quadrizzz"\ ) {
