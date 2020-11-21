@@ -66,11 +66,12 @@ window.onresize = ()=>{
 
 
 const show = ()=>{
+    const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY
     const name ="Qudrizzz"
     fetch('https://api.github.com/graphql' , {
         method : 'POST',
         headers : {
-            "Authorization" : `bearer ${process.env.GRAPHQL_API_KEY}` 
+            "Authorization" : `bearer ${GRAPHQL_API_KEY}` 
         },
         body : JSON.stringify({query : `{
             user(login: "\Quadrizzz"\ ) {
