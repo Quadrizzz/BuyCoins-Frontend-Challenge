@@ -66,9 +66,14 @@ window.onresize = ()=>{
 
 
 const show = ()=>{
-    fetch('https://blooming-sea-31036.herokuapp.com/')
-    .then(response => response.json())
+    fetch('https://blooming-sea-31036.herokuapp.com/', {
+        headers : { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    })
     .then(key =>{
+        console.log(key)
         shows(key)
     } )
     
