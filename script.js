@@ -66,16 +66,17 @@ window.onresize = ()=>{
 
 
 const show = ()=>{
-    fetch('https://blooming-sea-31036.herokuapp.com/', {
+    fetch('https://api.mocki.io/v1/1f9b4ad3', {
         headers : { 
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         }
+    }).then(res =>{
+       return res.json()
+    }).then(data => {
+        return shows(data.key)
     })
-    .then(key =>{
-        console.log(key)
-        shows(key)
-    } )
+
     
 }
 
