@@ -70,7 +70,7 @@ const show = ()=>{
     fetch('https://api.github.com/graphql' , {
         method : 'POST',
         headers : {
-            "Authorization" : "bearer c6c84b4b050bb39c172261daa7696cb68cd43e30"
+            "Authorization" : `bearer ${process.env.GRAPHQL_API_KEY}` 
         },
         body : JSON.stringify({query : `{
             user(login: "\Quadrizzz"\ ) {
