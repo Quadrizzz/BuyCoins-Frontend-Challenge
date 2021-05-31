@@ -13,6 +13,14 @@ window.onscroll = ()=>{
     }
 }
 
+var name = ''
+
+const get_username = ()=>{
+    name =  document.getElementsByClassName('text')[0].value
+    console.log(name)
+    window.location.href = "file:///C:/Users/HP/Desktop/Github_clone/index2.html";
+}
+
 const show_menu = ()=>{
     const menu = document.getElementById('nav')
     menu.classList.toggle("show_nav")
@@ -66,7 +74,7 @@ window.onresize = ()=>{
 
 
 const show = ()=>{
-    fetch('https://api.mocki.io/v1/1f9b4ad3', {
+    fetch('https://mocki.io/v1/8b3d3a95-8f8e-4013-9a81-9db0544b52df', {
         headers : { 
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -87,7 +95,7 @@ const shows = (key)=>{
             "Authorization" : `bearer ${key}` 
         },
         body : JSON.stringify({query : `{
-            user(login: "\Quadrizzz"\ ) {
+            user(login: "\`${name}``"\ ) {
                  repositories(first: 20, isFork: false)
                   { nodes
                      { name  
